@@ -97,12 +97,12 @@ The diagram shows how each layer communicates:
 ### Running the UI Applications
 - **Requestor UI**:
   ```bash
-  cd src/RequestorUI/ChatSystem.RequestorUI
+  cd src/frontend/ChatSystem.RequestorUI
   dotnet run
   ```
 - **Listener UI**:
   ```bash
-  cd src/ListenerUI/ChatSystem.ListenerUI
+  cd src/frontend/ChatSystem.ListenerUI
   dotnet run
   ```
 
@@ -114,7 +114,7 @@ The diagram shows how each layer communicates:
 ## Testing
 Run the tests using the following command:
 ```bash
-cd src/ChatSystem.Tests
+cd src/api/ChatSystem.Tests
  dotnet test
 ```
 

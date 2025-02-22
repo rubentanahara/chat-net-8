@@ -14,9 +14,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatSystem.Infrastructure",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatSystem.API", "src\api\ChatSystem.API\ChatSystem.API.csproj", "{95825D5E-A148-4DAA-B083-644AEFC4796A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatSystem.RequestorUI", "src\frontend\RequestorUI\ChatSystem.RequestorUI\ChatSystem.RequestorUI.csproj", "{14BF4D7A-2273-40F8-AAE4-0C813EBC0A3C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatSystem.RequestorUI", "src\frontend\ChatSystem.RequestorUI\ChatSystem.RequestorUI.csproj", "{14BF4D7A-2273-40F8-AAE4-0C813EBC0A3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatSystem.ListenerUI", "src\frontend\ListenerUI\ChatSystem.ListenerUI\ChatSystem.ListenerUI.csproj", "{5DA92241-29ED-4F10-B48D-73C35B930DD6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatSystem.ListenerUI", "src\frontend\ChatSystem.ListenerUI\ChatSystem.ListenerUI.csproj", "{5DA92241-29ED-4F10-B48D-73C35B930DD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
