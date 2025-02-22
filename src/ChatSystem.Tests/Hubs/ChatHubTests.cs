@@ -137,7 +137,7 @@ public class ChatHubTests
         _mockClients.Verify(x => x.Group($"user_{chatRoom.RequestorId}"), Times.Once);
         _mockClients.Verify(x => x.Group($"user_{chatRoom.ListenerId}"), Times.Once);
         _mockClientProxy.Verify(x => x.SendCoreAsync("ChatAccepted", 
-            It.Is<object[]>(o => o[0].ToString() == listenerId), 
+            It.Is<object[]>(o => o.Length > 0 && o[0] is ChatRoomDto && ((ChatRoomDto)o[0]).ListenerId == listenerId), 
             It.IsAny<CancellationToken>()), Times.Exactly(2));
     }
 } 
