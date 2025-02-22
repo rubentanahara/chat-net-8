@@ -9,3 +9,4 @@
 /Users/rubentanahara/Desktop/chat/src/Domain/ChatSystem.Domain/obj/Debug/net8.0/refint/ChatSystem.Domain.dll
 /Users/rubentanahara/Desktop/chat/src/Domain/ChatSystem.Domain/obj/Debug/net8.0/ChatSystem.Domain.pdb
 /Users/rubentanahara/Desktop/chat/src/Domain/ChatSystem.Domain/obj/Debug/net8.0/ref/ChatSystem.Domain.dll
+/Users/rubentanahara/Desktop/chat/src/Domain/ChatSystem.Domain/obj/Debug/net8.0/ChatSystem.Domain.sourcelink.json

@@ -15,3 +15,4 @@
 /Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/obj/Debug/net8.0/ChatSystem.Infrastructure.pdb
 /Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/obj/Debug/net8.0/ChatSystem.Infrastructure.genruntimeconfig.cache
 /Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/obj/Debug/net8.0/ref/ChatSystem.Infrastructure.dll
+/Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/obj/Debug/net8.0/ChatSystem.Infrastructure.sourcelink.json

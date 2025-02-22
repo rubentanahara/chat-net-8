@@ -1,0 +1,33 @@
+# Ignore .git directory
+.git
+
+# Ignore .gitignore and .dockerignore files
+.gitignore
+.dockerignore
+
+# Ignore build output directories
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.suo
+*.rsuser
+*.userosscache
+*.sln.docstates
+
+# Ignore Visual Studio specific files
+.vs/
+
+# Ignore temporary files
+*.tmp
+*.bak
+
+# Ignore logs
+*.log
+
+# Ignore Dockerfile and docker-compose.yml if not needed in the image
+Dockerfile
+docker-compose.yml
+
+# Ignore any other files or directories specific to your project that are not needed in the Docker image 

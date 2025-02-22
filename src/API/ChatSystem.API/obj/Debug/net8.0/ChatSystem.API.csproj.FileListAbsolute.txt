@@ -127,3 +127,4 @@
 /Users/rubentanahara/Desktop/chat/src/API/ChatSystem.API/bin/Debug/net8.0/MessagePack.Annotations.dll
 /Users/rubentanahara/Desktop/chat/src/API/ChatSystem.API/bin/Debug/net8.0/Microsoft.AspNetCore.SignalR.StackExchangeRedis.dll
 /Users/rubentanahara/Desktop/chat/src/API/ChatSystem.API/bin/Debug/net8.0/Microsoft.NET.StringTools.dll
+/Users/rubentanahara/Desktop/chat/src/API/ChatSystem.API/obj/Debug/net8.0/ChatSystem.API.sourcelink.json

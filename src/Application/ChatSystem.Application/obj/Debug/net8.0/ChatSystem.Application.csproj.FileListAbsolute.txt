@@ -13,3 +13,4 @@
 /Users/rubentanahara/Desktop/chat/src/Application/ChatSystem.Application/obj/Debug/net8.0/refint/ChatSystem.Application.dll
 /Users/rubentanahara/Desktop/chat/src/Application/ChatSystem.Application/obj/Debug/net8.0/ChatSystem.Application.pdb
 /Users/rubentanahara/Desktop/chat/src/Application/ChatSystem.Application/obj/Debug/net8.0/ref/ChatSystem.Application.dll
+/Users/rubentanahara/Desktop/chat/src/Application/ChatSystem.Application/obj/Debug/net8.0/ChatSystem.Application.sourcelink.json
