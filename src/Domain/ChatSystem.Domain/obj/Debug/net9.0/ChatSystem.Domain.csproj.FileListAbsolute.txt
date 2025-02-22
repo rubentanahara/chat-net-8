@@ -1,0 +1,11 @@
+/Users/rubentanahara/Desktop/chat/src/Domain/ChatSystem.Domain/bin/Debug/net9.0/ChatSystem.Domain.deps.json
+/Users/rubentanahara/Desktop/chat/src/Domain/ChatSystem.Domain/bin/Debug/net9.0/ChatSystem.Domain.dll
+/Users/rubentanahara/Desktop/chat/src/Domain/ChatSystem.Domain/bin/Debug/net9.0/ChatSystem.Domain.pdb
+/Users/rubentanahara/Desktop/chat/src/Domain/ChatSystem.Domain/obj/Debug/net9.0/ChatSystem.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/rubentanahara/Desktop/chat/src/Domain/ChatSystem.Domain/obj/Debug/net9.0/ChatSystem.Domain.AssemblyInfoInputs.cache
+/Users/rubentanahara/Desktop/chat/src/Domain/ChatSystem.Domain/obj/Debug/net9.0/ChatSystem.Domain.AssemblyInfo.cs
+/Users/rubentanahara/Desktop/chat/src/Domain/ChatSystem.Domain/obj/Debug/net9.0/ChatSystem.Domain.csproj.CoreCompileInputs.cache
+/Users/rubentanahara/Desktop/chat/src/Domain/ChatSystem.Domain/obj/Debug/net9.0/ChatSystem.Domain.dll
+/Users/rubentanahara/Desktop/chat/src/Domain/ChatSystem.Domain/obj/Debug/net9.0/refint/ChatSystem.Domain.dll
+/Users/rubentanahara/Desktop/chat/src/Domain/ChatSystem.Domain/obj/Debug/net9.0/ChatSystem.Domain.pdb
+/Users/rubentanahara/Desktop/chat/src/Domain/ChatSystem.Domain/obj/Debug/net9.0/ref/ChatSystem.Domain.dll

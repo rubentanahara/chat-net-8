@@ -1,0 +1,127 @@
+# Version of docker-compose syntax
+version: '3.8'
+
+services:
+  # API service - Main backend service handling chat functionality
+  api:
+    # Build configuration for the API service
+    build:
+      # Use the root directory as build context
+      context: .
+      # Use the API's Dockerfile for building
+      dockerfile: src/API/ChatSystem.API/Dockerfile
+    # Map host port 5050 to container port 80
+    ports:
+      - "5050:80"
+    # Service dependencies - ensure these are running before starting API
+    depends_on:
+      # Wait for MySQL to be healthy before starting
+      mysql:
+        condition: service_healthy
+      # Wait for Redis to be started before starting
+      redis:
+        condition: service_started
+    # Environment variables for the API service
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      # MySQL connection string with connection pooling and timeout settings
+      - ConnectionStrings__DefaultConnection=Server=mysql;Database=ChatSystem;User=root;Password=your_password;AllowPublicKeyRetrieval=true;MaximumPoolsize=100;ConnectionTimeout=60;DefaultCommandTimeout=60
+      # Redis connection string for SignalR backplane
+      - ConnectionStrings__Redis=redis:6379
+    # Connect to the chat-network
+    networks:
+      - chat-network
+    # Restart policy
+    restart: unless-stopped
+
+  # Requestor UI service - Console UI for chat requestors
+  requestor-ui:
+    build:
+      context: .
+      dockerfile: src/RequestorUI/ChatSystem.RequestorUI/Dockerfile
+    depends_on:
+      - api
+    environment:
+      # API URL for the UI to connect to
+      - API_URL=http://api:80
+    networks:
+      - chat-network
+
+  # Listener UI service - Console UI for chat listeners
+  listener-ui:
+    build:
+      context: .
+      dockerfile: src/ListenerUI/ChatSystem.ListenerUI/Dockerfile
+    depends_on:
+      - api
+    environment:
+      # API URL for the UI to connect to
+      - API_URL=http://api:80
+    networks:
+      - chat-network
+
+  # MySQL service - Database for storing chat data
+  mysql:
+    # Use MySQL 8.0 image
+    image: mysql:8.0
+    environment:
+      # Root password for MySQL
+      MYSQL_ROOT_PASSWORD: your_password
+      # Database to create on startup
+      MYSQL_DATABASE: ChatSystem
+    # Map host port 3306 to container port 3306
+    ports:
+      - "3306:3306"
+    # Persist MySQL data using a named volume
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - chat-network
+    # Use native password authentication
+    command: --default-authentication-plugin=mysql_native_password
+    # Health check configuration
+    healthcheck:
+      # Command to check if MySQL is healthy
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$$MYSQL_ROOT_PASSWORD"]
+      # Check every 5 seconds
+      interval: 5s
+      # Timeout after 5 seconds
+      timeout: 5s
+      # Try 20 times before marking as unhealthy
+      retries: 20
+    restart: unless-stopped
+
+  # Redis service - Used for SignalR backplane
+  redis:
+    # Use Alpine-based Redis image for smaller size
+    image: redis:alpine
+    # Map host port 6379 to container port 6379
+    ports:
+      - "6379:6379"
+    # Persist Redis data using a named volume
+    volumes:
+      - redis-data:/data
+    networks:
+      - chat-network
+    # Health check configuration
+    healthcheck:
+      # Command to check if Redis is healthy
+      test: ["CMD", "redis-cli", "ping"]
+      # Check every 5 seconds
+      interval: 5s
+      # Timeout after 5 seconds
+      timeout: 5s
+      # Try 5 times before marking as unhealthy
+      retries: 5
+    restart: unless-stopped
+
+# Define custom network for service communication
+networks:
+  chat-network:
+    driver: bridge
+
+# Define named volumes for data persistence
+volumes:
+  mysql-data:
+  redis-data: 

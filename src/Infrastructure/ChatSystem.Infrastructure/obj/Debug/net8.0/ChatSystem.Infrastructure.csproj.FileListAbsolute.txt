@@ -1,0 +1,17 @@
+/Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/bin/Debug/net8.0/ChatSystem.Infrastructure.deps.json
+/Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/bin/Debug/net8.0/ChatSystem.Infrastructure.runtimeconfig.json
+/Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/bin/Debug/net8.0/ChatSystem.Infrastructure.dll
+/Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/bin/Debug/net8.0/ChatSystem.Infrastructure.pdb
+/Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/bin/Debug/net8.0/ChatSystem.Domain.dll
+/Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/bin/Debug/net8.0/ChatSystem.Domain.pdb
+/Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/obj/Debug/net8.0/ChatSystem.Infrastructure.csproj.AssemblyReference.cache
+/Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/obj/Debug/net8.0/ChatSystem.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/obj/Debug/net8.0/ChatSystem.Infrastructure.AssemblyInfoInputs.cache
+/Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/obj/Debug/net8.0/ChatSystem.Infrastructure.AssemblyInfo.cs
+/Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/obj/Debug/net8.0/ChatSystem.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/obj/Debug/net8.0/ChatSyst.E3CC9A99.Up2Date
+/Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/obj/Debug/net8.0/ChatSystem.Infrastructure.dll
+/Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/obj/Debug/net8.0/refint/ChatSystem.Infrastructure.dll
+/Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/obj/Debug/net8.0/ChatSystem.Infrastructure.pdb
+/Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/obj/Debug/net8.0/ChatSystem.Infrastructure.genruntimeconfig.cache
+/Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/obj/Debug/net8.0/ref/ChatSystem.Infrastructure.dll
