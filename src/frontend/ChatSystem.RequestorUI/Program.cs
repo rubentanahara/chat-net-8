@@ -3,9 +3,16 @@ using Spectre.Console;
 using ChatSystem.UI.Shared.Components;
 using ChatSystem.UI.Shared.Services;
 using ChatSystem.UI.Shared.DTOs;
-using ChatSystem.Domain.Enums;
 
 namespace ChatSystem.RequestorUI;
+
+public static class StringExtensions
+{
+    public static string SplitCamelCase(this string str)
+    {
+        return string.Concat(str.Select((x, i) => i > 0 && char.IsUpper(x) ? " " + x : x.ToString()));
+    }
+}
 
 public class Program
 {
@@ -170,11 +177,11 @@ public class Program
     {
         ChatComponents.RenderHeader("Start New Chat", Color.Blue);
 
+        var requestTypes = new[] { "Hardware", "Software", "Network" };
         var requestType = AnsiConsole.Prompt(
-            new SelectionPrompt<RequestType>()
+            new SelectionPrompt<string>()
                 .Title("What type of support are you looking for?")
-                .AddChoices(Enum.GetValues<RequestType>())
-                .UseConverter(type => type.ToString().SplitCamelCase())
+                .AddChoices(requestTypes)
         );
 
         var message = AnsiConsole.Ask<string>("What would you like to discuss?");
@@ -183,7 +190,7 @@ public class Program
         {
             var request = new CreateChatRequestDto(
                 _userId!,
-                requestType.ToString(),
+                requestType,
                 message
             );
 
@@ -279,10 +286,5 @@ public class Program
             ChatComponents.RenderError($"Failed to get active chats: {ex.Message}");
             await Task.Delay(2000);
         }
-    }
-
-    private static string SplitCamelCase(this string str)
-    {
-        return string.Concat(str.Select((x, i) => i > 0 && char.IsUpper(x) ? " " + x : x.ToString()));
     }
 }

@@ -15,15 +15,16 @@ public static class ChatComponents
     public static void RenderChatHeader(string chatId, string partnerName, string requestType = "")
     {
         Console.Clear();
-        var header = new Panel($"Chat with {partnerName}")
+        var headerText = $"Chat with {partnerName}";
+        if (!string.IsNullOrEmpty(requestType))
+        {
+            headerText += $"\nRequest Type: {requestType}";
+        }
+        
+        var header = new Panel(headerText)
             .Header($"Chat ID: {chatId}")
             .Padding(1, 1, 1, 1)
             .Border(BoxBorder.Rounded);
-
-        if (!string.IsNullOrEmpty(requestType))
-        {
-            header.Footer($"Request Type: {requestType}");
-        }
 
         AnsiConsole.Write(header);
         AnsiConsole.WriteLine();
@@ -31,31 +32,18 @@ public static class ChatComponents
 
     public static void RenderMessage(string sender, string content, bool isCurrentUser, DateTime timestamp)
     {
-        var messageColor = isCurrentUser ? "blue" : "green";
+        var messageColor = isCurrentUser ? Color.Blue : Color.Green;
         var alignment = isCurrentUser ? Justify.Right : Justify.Left;
         var prefix = isCurrentUser ? "→" : "←";
 
         var panel = new Panel(content)
             .Header($"{prefix} {sender}")
             .Border(BoxBorder.Rounded)
-            .BorderColor(messageColor)
+            .BorderStyle(new Style(messageColor))
             .Padding(1, 1, 0, 0);
 
-        var layout = new Layout()
-            .SplitRows(
-                new Layout("Message")
-                    .Size(3)
-                    .Update(l => l.Alignment = alignment),
-                new Layout("Timestamp")
-                    .Size(1)
-                    .Update(l => l.Alignment = alignment)
-            );
-
-        layout["Message"].Update(l => l.Component = panel);
-        layout["Timestamp"].Update(l => l.Component = 
-            new Markup($"[grey]{timestamp:HH:mm}[/]"));
-
-        AnsiConsole.Write(layout);
+        AnsiConsole.Write(panel);
+        AnsiConsole.MarkupLine($"[grey]{timestamp:HH:mm}[/]");
         AnsiConsole.WriteLine();
     }
 

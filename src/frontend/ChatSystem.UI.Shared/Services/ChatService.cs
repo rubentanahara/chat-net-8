@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.SignalR.Client;
 using ChatSystem.UI.Shared.Components;
+using ChatSystem.UI.Shared.DTOs;
 using Spectre.Console;
 
 namespace ChatSystem.UI.Shared.Services;
