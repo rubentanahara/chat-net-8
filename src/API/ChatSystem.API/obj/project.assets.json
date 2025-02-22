@@ -2,6 +2,23 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "AspNetCore.HealthChecks.Redis/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Diagnostics.HealthChecks": "8.0.0",
+          "StackExchange.Redis": "2.7.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/HealthChecks.Redis.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/HealthChecks.Redis.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -963,6 +980,56 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "Microsoft.Extensions.Diagnostics.HealthChecks/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions": "8.0.2",
+          "Microsoft.Extensions.Hosting.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Options": "8.0.2"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Diagnostics.HealthChecks.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Diagnostics.HealthChecks.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions/8.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "8.0.2",
+          "Microsoft.Extensions.Diagnostics.HealthChecks": "8.0.2",
+          "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions": "8.0.2"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.FileProviders.Abstractions/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -1128,7 +1195,7 @@
           }
         }
       },
-      "Microsoft.OpenApi/1.6.22": {
+      "Microsoft.OpenApi/1.4.3": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
@@ -1198,6 +1265,35 @@
           }
         }
       },
+      "Polly/8.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Polly.Core": "8.2.1"
+        },
+        "compile": {
+          "lib/net6.0/Polly.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Polly.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "Polly.Core/8.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Polly.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Polly.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Pomelo.EntityFrameworkCore.MySql/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -1215,9 +1311,10 @@
           }
         }
       },
-      "StackExchange.Redis/2.6.122": {
+      "StackExchange.Redis/2.7.4": {
         "type": "package",
         "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
           "Pipelines.Sockets.Unofficial": "2.2.8"
         },
         "compile": {
@@ -1231,33 +1328,30 @@
           }
         }
       },
-      "Swashbuckle.AspNetCore/7.2.0": {
+      "Swashbuckle.AspNetCore/6.5.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.ApiDescription.Server": "6.0.5",
-          "Swashbuckle.AspNetCore.Swagger": "7.2.0",
-          "Swashbuckle.AspNetCore.SwaggerGen": "7.2.0",
-          "Swashbuckle.AspNetCore.SwaggerUI": "7.2.0"
+          "Swashbuckle.AspNetCore.Swagger": "6.5.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.5.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "6.5.0"
         },
         "build": {
           "build/Swashbuckle.AspNetCore.props": {}
-        },
-        "buildMultiTargeting": {
-          "buildMultiTargeting/Swashbuckle.AspNetCore.props": {}
         }
       },
-      "Swashbuckle.AspNetCore.Swagger/7.2.0": {
+      "Swashbuckle.AspNetCore.Swagger/6.5.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.OpenApi": "1.6.22"
+          "Microsoft.OpenApi": "1.2.3"
         },
         "compile": {
-          "lib/net8.0/Swashbuckle.AspNetCore.Swagger.dll": {
+          "lib/net7.0/Swashbuckle.AspNetCore.Swagger.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net8.0/Swashbuckle.AspNetCore.Swagger.dll": {
+          "lib/net7.0/Swashbuckle.AspNetCore.Swagger.dll": {
             "related": ".pdb;.xml"
           }
         },
@@ -1265,31 +1359,31 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Swashbuckle.AspNetCore.SwaggerGen/7.2.0": {
+      "Swashbuckle.AspNetCore.SwaggerGen/6.5.0": {
         "type": "package",
         "dependencies": {
-          "Swashbuckle.AspNetCore.Swagger": "7.2.0"
+          "Swashbuckle.AspNetCore.Swagger": "6.5.0"
         },
         "compile": {
-          "lib/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
+          "lib/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
+          "lib/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
             "related": ".pdb;.xml"
           }
         }
       },
-      "Swashbuckle.AspNetCore.SwaggerUI/7.2.0": {
+      "Swashbuckle.AspNetCore.SwaggerUI/6.5.0": {
         "type": "package",
         "compile": {
-          "lib/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
+          "lib/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
+          "lib/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
             "related": ".pdb;.xml"
           }
         },
@@ -1648,6 +1742,20 @@
     }
   },
   "libraries": {
+    "AspNetCore.HealthChecks.Redis/8.0.0": {
+      "sha512": "ejDemKPrlWV1fwMxCwgg11bbblNICQdo6koRd66RK3wqHPaSOS8FpJQ/5O64pQ/56/Syx43uqxi7LEuSlzjmFA==",
+      "type": "package",
+      "path": "aspnetcore.healthchecks.redis/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "aspnetcore.healthchecks.redis.8.0.0.nupkg.sha512",
+        "aspnetcore.healthchecks.redis.nuspec",
+        "icon.png",
+        "lib/netstandard2.0/HealthChecks.Redis.dll",
+        "lib/netstandard2.0/HealthChecks.Redis.xml"
+      ]
+    },
     "Humanizer.Core/2.14.1": {
       "sha512": "lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "type": "package",
@@ -2971,6 +3079,59 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Microsoft.Extensions.Diagnostics.HealthChecks/8.0.2": {
+      "sha512": "tEFzfuFqEH9XP67opawjuzTPoTb67icZf9p292aRuYolbpFXgC3N8+rVq0zl6KUmsJu0odbYb29gjehuRPX9NQ==",
+      "type": "package",
+      "path": "microsoft.extensions.diagnostics.healthchecks/8.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net462/Microsoft.Extensions.Diagnostics.HealthChecks.dll",
+        "lib/net462/Microsoft.Extensions.Diagnostics.HealthChecks.xml",
+        "lib/net8.0/Microsoft.Extensions.Diagnostics.HealthChecks.dll",
+        "lib/net8.0/Microsoft.Extensions.Diagnostics.HealthChecks.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.HealthChecks.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.HealthChecks.xml",
+        "microsoft.extensions.diagnostics.healthchecks.8.0.2.nupkg.sha512",
+        "microsoft.extensions.diagnostics.healthchecks.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions/8.0.2": {
+      "sha512": "HKHQmBHDSJrNAbPfwRxYLQKNpoBKs7hoGWXIRCjWiwYQhDGL/iDveqHcDQ6yfsE76oHyK3WOZogxGulxpNPQnw==",
+      "type": "package",
+      "path": "microsoft.extensions.diagnostics.healthchecks.abstractions/8.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net462/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.xml",
+        "microsoft.extensions.diagnostics.healthchecks.abstractions.8.0.2.nupkg.sha512",
+        "microsoft.extensions.diagnostics.healthchecks.abstractions.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore/8.0.2": {
+      "sha512": "UONnT35YfeV5qzMK8MUt6wjp6tnTRK/q1w1eBofsT8P5rWxy1I74E8lo098Ws9VhvRrDVBR/KRbIxFr64KQlhA==",
+      "type": "package",
+      "path": "microsoft.extensions.diagnostics.healthchecks.entityframeworkcore/8.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net8.0/Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore.dll",
+        "lib/net8.0/Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore.xml",
+        "microsoft.extensions.diagnostics.healthchecks.entityframeworkcore.8.0.2.nupkg.sha512",
+        "microsoft.extensions.diagnostics.healthchecks.entityframeworkcore.nuspec"
+      ]
+    },
     "Microsoft.Extensions.FileProviders.Abstractions/8.0.0": {
       "sha512": "ZbaMlhJlpisjuWbvXr4LdAst/1XxH3vZ6A0BsgTphZ2L4PGuxRLz7Jr/S7mkAAnOn78Vu0fKhEgNF5JO3zfjqQ==",
       "type": "package",
@@ -3279,18 +3440,17 @@
         "ref/netstandard2.0/Microsoft.NET.StringTools.xml"
       ]
     },
-    "Microsoft.OpenApi/1.6.22": {
-      "sha512": "aBvunmrdu/x+4CaA/UP1Jx4xWGwk4kymhoIRnn2Vp+zi5/KOPQJ9EkSXHRUr01WcGKtYl3Au7XfkPJbU1G2sjQ==",
+    "Microsoft.OpenApi/1.4.3": {
+      "sha512": "rURwggB+QZYcSVbDr7HSdhw/FELvMlriW10OeOzjPT7pstefMo7IThhtNtDudxbXhW+lj0NfX72Ka5EDsG8x6w==",
       "type": "package",
-      "path": "microsoft.openapi/1.6.22",
+      "path": "microsoft.openapi/1.4.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "README.md",
         "lib/netstandard2.0/Microsoft.OpenApi.dll",
         "lib/netstandard2.0/Microsoft.OpenApi.pdb",
         "lib/netstandard2.0/Microsoft.OpenApi.xml",
-        "microsoft.openapi.1.6.22.nupkg.sha512",
+        "microsoft.openapi.1.4.3.nupkg.sha512",
         "microsoft.openapi.nuspec"
       ]
     },
@@ -3389,6 +3549,55 @@
         "pipelines.sockets.unofficial.nuspec"
       ]
     },
+    "Polly/8.2.1": {
+      "sha512": "tVHvP5Z0fNoZCE9mpKAsh0IaValwsTGPrqjlWqkWR/Gpl5jL05HWC/AVGSL+jkAqkl1Jn7uBUOArnRD+dK5PfQ==",
+      "type": "package",
+      "path": "polly/8.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/Polly.dll",
+        "lib/net462/Polly.pdb",
+        "lib/net472/Polly.dll",
+        "lib/net472/Polly.pdb",
+        "lib/net6.0/Polly.dll",
+        "lib/net6.0/Polly.pdb",
+        "lib/netstandard2.0/Polly.dll",
+        "lib/netstandard2.0/Polly.pdb",
+        "package-icon.png",
+        "package-readme.md",
+        "polly.8.2.1.nupkg.sha512",
+        "polly.nuspec"
+      ]
+    },
+    "Polly.Core/8.2.1": {
+      "sha512": "/Z3EspfWBdTla4I9IAcQn32/7kB5WS3rSnOYloz8YlVyClu8h7uuYf4pfUvffOYVbxmDX/mFRfxwzqW2Zs96ZA==",
+      "type": "package",
+      "path": "polly.core/8.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/Polly.Core.dll",
+        "lib/net462/Polly.Core.pdb",
+        "lib/net462/Polly.Core.xml",
+        "lib/net472/Polly.Core.dll",
+        "lib/net472/Polly.Core.pdb",
+        "lib/net472/Polly.Core.xml",
+        "lib/net6.0/Polly.Core.dll",
+        "lib/net6.0/Polly.Core.pdb",
+        "lib/net6.0/Polly.Core.xml",
+        "lib/net8.0/Polly.Core.dll",
+        "lib/net8.0/Polly.Core.pdb",
+        "lib/net8.0/Polly.Core.xml",
+        "lib/netstandard2.0/Polly.Core.dll",
+        "lib/netstandard2.0/Polly.Core.pdb",
+        "lib/netstandard2.0/Polly.Core.xml",
+        "package-icon.png",
+        "package-readme.md",
+        "polly.core.8.2.1.nupkg.sha512",
+        "polly.core.nuspec"
+      ]
+    },
     "Pomelo.EntityFrameworkCore.MySql/8.0.0": {
       "sha512": "wEzKTeYCs/+cGSpT5zE8UrKkJyqpJ24yBufthDoCWUhpCCYUIsMKeX4fvaYcm9mbkfHP2dZ+p6V+ZKTAZ3hXRQ==",
       "type": "package",
@@ -3404,10 +3613,10 @@
         "pomelo.entityframeworkcore.mysql.nuspec"
       ]
     },
-    "StackExchange.Redis/2.6.122": {
-      "sha512": "wp7mvGpFXaevfZ07/SDeh/6YHUJEgwJIGyjbDWKBYbPwKMJQYFz9zFEmBptqtVzqvSgft5nlewwutoaMaG0LPA==",
+    "StackExchange.Redis/2.7.4": {
+      "sha512": "lD6a0lGOCyV9iuvObnzStL74EDWAyK31w6lS+Md9gIz1eP4U6KChDIflzTdtrktxlvVkeOvPtkaYOcm4qjbHSw==",
       "type": "package",
-      "path": "stackexchange.redis/2.6.122",
+      "path": "stackexchange.redis/2.7.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3421,93 +3630,97 @@
         "lib/netcoreapp3.1/StackExchange.Redis.xml",
         "lib/netstandard2.0/StackExchange.Redis.dll",
         "lib/netstandard2.0/StackExchange.Redis.xml",
-        "stackexchange.redis.2.6.122.nupkg.sha512",
+        "stackexchange.redis.2.7.4.nupkg.sha512",
         "stackexchange.redis.nuspec"
       ]
     },
-    "Swashbuckle.AspNetCore/7.2.0": {
-      "sha512": "vJv19UpWm6OOgnS9QLDnWARNVasXUfj8SFvlG7UVALm4nBnfwRnEky7C0veSDqMUmBeMPC6Ec3d6G1ts/J04Uw==",
+    "Swashbuckle.AspNetCore/6.5.0": {
+      "sha512": "FK05XokgjgwlCI6wCT+D4/abtQkL1X1/B9Oas6uIwHFmYrIO9WUD5aLC9IzMs9GnHfUXOtXZ2S43gN1mhs5+aA==",
       "type": "package",
-      "path": "swashbuckle.aspnetcore/7.2.0",
+      "path": "swashbuckle.aspnetcore/6.5.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "build/Swashbuckle.AspNetCore.props",
-        "buildMultiTargeting/Swashbuckle.AspNetCore.props",
-        "docs/package-readme.md",
-        "swashbuckle.aspnetcore.7.2.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
         "swashbuckle.aspnetcore.nuspec"
       ]
     },
-    "Swashbuckle.AspNetCore.Swagger/7.2.0": {
-      "sha512": "y27fNDfIh1vGhJjXYynLcZjl7DLOW1bSO2MDsY9wB4Zm1fdxpPsuBSiR4U+0acWlAqLmnuOPKr/OeOgwRUkBlw==",
+    "Swashbuckle.AspNetCore.Swagger/6.5.0": {
+      "sha512": "XWmCmqyFmoItXKFsQSwQbEAsjDKcxlNf1l+/Ki42hcb6LjKL8m5Db69OTvz5vLonMSRntYO1XLqz0OP+n3vKnA==",
       "type": "package",
-      "path": "swashbuckle.aspnetcore.swagger/7.2.0",
+      "path": "swashbuckle.aspnetcore.swagger/6.5.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "lib/net5.0/Swashbuckle.AspNetCore.Swagger.dll",
+        "lib/net5.0/Swashbuckle.AspNetCore.Swagger.pdb",
+        "lib/net5.0/Swashbuckle.AspNetCore.Swagger.xml",
         "lib/net6.0/Swashbuckle.AspNetCore.Swagger.dll",
         "lib/net6.0/Swashbuckle.AspNetCore.Swagger.pdb",
         "lib/net6.0/Swashbuckle.AspNetCore.Swagger.xml",
-        "lib/net8.0/Swashbuckle.AspNetCore.Swagger.dll",
-        "lib/net8.0/Swashbuckle.AspNetCore.Swagger.pdb",
-        "lib/net8.0/Swashbuckle.AspNetCore.Swagger.xml",
-        "lib/net9.0/Swashbuckle.AspNetCore.Swagger.dll",
-        "lib/net9.0/Swashbuckle.AspNetCore.Swagger.pdb",
-        "lib/net9.0/Swashbuckle.AspNetCore.Swagger.xml",
+        "lib/net7.0/Swashbuckle.AspNetCore.Swagger.dll",
+        "lib/net7.0/Swashbuckle.AspNetCore.Swagger.pdb",
+        "lib/net7.0/Swashbuckle.AspNetCore.Swagger.xml",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.pdb",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.xml",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.dll",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.pdb",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.xml",
-        "package-readme.md",
-        "swashbuckle.aspnetcore.swagger.7.2.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swagger.nuspec"
       ]
     },
-    "Swashbuckle.AspNetCore.SwaggerGen/7.2.0": {
-      "sha512": "pMrTxGVuXM7t4wqft5CNNU8A0++Yw5kTLmYhB6tbEcyBfO8xEF/Y8pkJhO6BZ/2MYONrRYoQTfPFJqu8fOf5WQ==",
+    "Swashbuckle.AspNetCore.SwaggerGen/6.5.0": {
+      "sha512": "Y/qW8Qdg9OEs7V013tt+94OdPxbRdbhcEbw4NiwGvf4YBcfhL/y7qp/Mjv/cENsQ2L3NqJ2AOu94weBy/h4KvA==",
       "type": "package",
-      "path": "swashbuckle.aspnetcore.swaggergen/7.2.0",
+      "path": "swashbuckle.aspnetcore.swaggergen/6.5.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
+        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
+        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
         "lib/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
         "lib/net6.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
         "lib/net6.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
-        "lib/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
-        "lib/net8.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
-        "lib/net8.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
-        "lib/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
-        "lib/net9.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
-        "lib/net9.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
+        "lib/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
+        "lib/net7.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
+        "lib/net7.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
-        "package-readme.md",
-        "swashbuckle.aspnetcore.swaggergen.7.2.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggergen.nuspec"
       ]
     },
-    "Swashbuckle.AspNetCore.SwaggerUI/7.2.0": {
-      "sha512": "hgrXeKzyp5OGN8qVvL7A+vhmU7mDJTfGpiMBRL66IcfLOyna8UTLtn3cC3CghamXpRDufcc9ciklTszUGEQK0w==",
+    "Swashbuckle.AspNetCore.SwaggerUI/6.5.0": {
+      "sha512": "OvbvxX+wL8skxTBttcBsVxdh73Fag4xwqEU2edh4JMn7Ws/xJHnY/JB1e9RoCb6XpDxUF3hD9A0Z1lEUx40Pfw==",
       "type": "package",
-      "path": "swashbuckle.aspnetcore.swaggerui/7.2.0",
+      "path": "swashbuckle.aspnetcore.swaggerui/6.5.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
+        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
+        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
         "lib/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
         "lib/net6.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
         "lib/net6.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
-        "lib/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
-        "lib/net8.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
-        "lib/net8.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
-        "lib/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
-        "lib/net9.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
-        "lib/net9.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
+        "lib/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
+        "lib/net7.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
+        "lib/net7.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
-        "package-readme.md",
-        "swashbuckle.aspnetcore.swaggerui.7.2.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
@@ -4065,23 +4278,25 @@
     },
     "ChatSystem.Application/1.0.0": {
       "type": "project",
-      "path": "../../Application/ChatSystem.Application/ChatSystem.Application.csproj",
-      "msbuildProject": "../../Application/ChatSystem.Application/ChatSystem.Application.csproj"
+      "path": "../ChatSystem.Application/ChatSystem.Application.csproj",
+      "msbuildProject": "../ChatSystem.Application/ChatSystem.Application.csproj"
     },
     "ChatSystem.Domain/1.0.0": {
       "type": "project",
-      "path": "../../Domain/ChatSystem.Domain/ChatSystem.Domain.csproj",
-      "msbuildProject": "../../Domain/ChatSystem.Domain/ChatSystem.Domain.csproj"
+      "path": "../ChatSystem.Domain/ChatSystem.Domain.csproj",
+      "msbuildProject": "../ChatSystem.Domain/ChatSystem.Domain.csproj"
     },
     "ChatSystem.Infrastructure/1.0.0": {
       "type": "project",
-      "path": "../../Infrastructure/ChatSystem.Infrastructure/ChatSystem.Infrastructure.csproj",
-      "msbuildProject": "../../Infrastructure/ChatSystem.Infrastructure/ChatSystem.Infrastructure.csproj"
+      "path": "../ChatSystem.Infrastructure/ChatSystem.Infrastructure.csproj",
+      "msbuildProject": "../ChatSystem.Infrastructure/ChatSystem.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "AspNetCore.HealthChecks.Redis >= 8.0.0",
       "ChatSystem.Application >= 1.0.0",
+      "ChatSystem.Domain >= 1.0.0",
       "ChatSystem.Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 8.0.2",
       "Microsoft.AspNetCore.SignalR >= 1.2.0",
@@ -4089,8 +4304,10 @@
       "Microsoft.EntityFrameworkCore >= 8.0.2",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.2",
       "Microsoft.Extensions.Caching.StackExchangeRedis >= 8.0.2",
+      "Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore >= 8.0.2",
+      "Polly >= 8.2.1",
       "Pomelo.EntityFrameworkCore.MySql >= 8.0.0",
-      "Swashbuckle.AspNetCore >= 7.2.0"
+      "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
   "packageFolders": {
@@ -4099,11 +4316,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rubentanahara/Desktop/chat/src/API/ChatSystem.API/ChatSystem.API.csproj",
+      "projectUniqueName": "/Users/rubentanahara/Desktop/chat/src/api/ChatSystem.API/ChatSystem.API.csproj",
       "projectName": "ChatSystem.API",
-      "projectPath": "/Users/rubentanahara/Desktop/chat/src/API/ChatSystem.API/ChatSystem.API.csproj",
+      "projectPath": "/Users/rubentanahara/Desktop/chat/src/api/ChatSystem.API/ChatSystem.API.csproj",
       "packagesPath": "/Users/rubentanahara/.nuget/packages/",
-      "outputPath": "/Users/rubentanahara/Desktop/chat/src/API/ChatSystem.API/obj/",
+      "outputPath": "/Users/rubentanahara/Desktop/chat/src/api/ChatSystem.API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/rubentanahara/.nuget/NuGet/NuGet.Config"
@@ -4119,11 +4336,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/rubentanahara/Desktop/chat/src/Application/ChatSystem.Application/ChatSystem.Application.csproj": {
-              "projectPath": "/Users/rubentanahara/Desktop/chat/src/Application/ChatSystem.Application/ChatSystem.Application.csproj"
+            "/Users/rubentanahara/Desktop/chat/src/api/ChatSystem.Application/ChatSystem.Application.csproj": {
+              "projectPath": "/Users/rubentanahara/Desktop/chat/src/api/ChatSystem.Application/ChatSystem.Application.csproj"
             },
-            "/Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/ChatSystem.Infrastructure.csproj": {
-              "projectPath": "/Users/rubentanahara/Desktop/chat/src/Infrastructure/ChatSystem.Infrastructure/ChatSystem.Infrastructure.csproj"
+            "/Users/rubentanahara/Desktop/chat/src/api/ChatSystem.Domain/ChatSystem.Domain.csproj": {
+              "projectPath": "/Users/rubentanahara/Desktop/chat/src/api/ChatSystem.Domain/ChatSystem.Domain.csproj"
+            },
+            "/Users/rubentanahara/Desktop/chat/src/api/ChatSystem.Infrastructure/ChatSystem.Infrastructure.csproj": {
+              "projectPath": "/Users/rubentanahara/Desktop/chat/src/api/ChatSystem.Infrastructure/ChatSystem.Infrastructure.csproj"
             }
           }
         }
@@ -4144,6 +4364,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "AspNetCore.HealthChecks.Redis": {
+            "target": "Package",
+            "version": "[8.0.0, )"
+          },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[8.0.2, )"
@@ -4170,13 +4394,21 @@
             "target": "Package",
             "version": "[8.0.2, )"
           },
+          "Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[8.0.2, )"
+          },
+          "Polly": {
+            "target": "Package",
+            "version": "[8.2.1, )"
+          },
           "Pomelo.EntityFrameworkCore.MySql": {
             "target": "Package",
             "version": "[8.0.0, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
-            "version": "[7.2.0, )"
+            "version": "[6.5.0, )"
           }
         },
         "imports": [

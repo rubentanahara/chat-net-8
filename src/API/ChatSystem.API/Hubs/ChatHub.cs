@@ -154,6 +154,11 @@ public class ChatHub : Hub
         await Clients.Group($"user_{otherUserId}").SendAsync("UserTypingStatus", userId, isTyping);
     }
 
+    public async Task<IEnumerable<ChatMessageDto>> GetChatHistoryAsync(Guid chatRoomId)
+    {
+        return await _chatService.GetChatHistoryAsync(chatRoomId);
+    }
+
     public async Task MarkMessageAsSeen(Guid chatRoomId, string userId)
     {
         var chatRoom = await _chatService.GetChatRoomByIdAsync(chatRoomId);
@@ -161,5 +166,10 @@ public class ChatHub : Hub
 
         var otherUserId = userId == chatRoom.RequestorId ? chatRoom.ListenerId : chatRoom.RequestorId;
         await Clients.Group($"user_{otherUserId}").SendAsync("MessagesSeen", userId);
+    }
+
+    public async Task<ChatRoomDto?> GetChatRoomByIdAsync(Guid chatRoomId)
+    {
+        return await _chatService.GetChatRoomByIdAsync(chatRoomId);
     }
 } 

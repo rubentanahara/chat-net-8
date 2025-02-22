@@ -20,46 +20,26 @@ services:
         condition: service_healthy
       # Wait for Redis to be started before starting
       redis:
-        condition: service_started
+        condition: service_healthy
     # Environment variables for the API service
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
       # MySQL connection string with connection pooling and timeout settings
-      - ConnectionStrings__DefaultConnection=Server=mysql;Database=ChatSystem;User=root;Password=your_password;AllowPublicKeyRetrieval=true;MaximumPoolsize=100;ConnectionTimeout=60;DefaultCommandTimeout=60
+      - ConnectionStrings__DefaultConnection=Server=mysql;Database=chatdb;User=root;Password=your_password;
       # Redis connection string for SignalR backplane
-      - ConnectionStrings__Redis=redis:6379
+      - ConnectionStrings__Redis=redis:6379,abortConnect=false
     # Connect to the chat-network
     networks:
       - chat-network
     # Restart policy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
     restart: unless-stopped
-
-  # Requestor UI service - Console UI for chat requestors
-  requestor-ui:
-    build:
-      context: .
-      dockerfile: src/RequestorUI/ChatSystem.RequestorUI/Dockerfile
-    depends_on:
-      - api
-    environment:
-      # API URL for the UI to connect to
-      - API_URL=http://api:80
-    networks:
-      - chat-network
-
-  # Listener UI service - Console UI for chat listeners
-  listener-ui:
-    build:
-      context: .
-      dockerfile: src/ListenerUI/ChatSystem.ListenerUI/Dockerfile
-    depends_on:
-      - api
-    environment:
-      # API URL for the UI to connect to
-      - API_URL=http://api:80
-    networks:
-      - chat-network
 
   # MySQL service - Database for storing chat data
   mysql:
@@ -69,7 +49,7 @@ services:
       # Root password for MySQL
       MYSQL_ROOT_PASSWORD: your_password
       # Database to create on startup
-      MYSQL_DATABASE: ChatSystem
+      MYSQL_DATABASE: chatdb
     # Map host port 3306 to container port 3306
     ports:
       - "3306:3306"
@@ -84,12 +64,12 @@ services:
     healthcheck:
       # Command to check if MySQL is healthy
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$$MYSQL_ROOT_PASSWORD"]
-      # Check every 5 seconds
-      interval: 5s
+      # Check every 10 seconds
+      interval: 10s
       # Timeout after 5 seconds
       timeout: 5s
-      # Try 20 times before marking as unhealthy
-      retries: 20
+      # Try 5 times before marking as unhealthy
+      retries: 5
     restart: unless-stopped
 
   # Redis service - Used for SignalR backplane
@@ -108,8 +88,8 @@ services:
     healthcheck:
       # Command to check if Redis is healthy
       test: ["CMD", "redis-cli", "ping"]
-      # Check every 5 seconds
-      interval: 5s
+      # Check every 10 seconds
+      interval: 10s
       # Timeout after 5 seconds
       timeout: 5s
       # Try 5 times before marking as unhealthy
